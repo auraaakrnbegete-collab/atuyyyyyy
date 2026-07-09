@@ -6,74 +6,128 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ffe4ec,#fff6d6);
+    background:linear-gradient(135deg,#ffeef5,#fef6ff,#fffdf5);
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    height:100vh;
+    overflow:hidden;
 }
 
 .card{
+    width:360px;
     background:white;
-    width:340px;
-    padding:25px;
     border-radius:25px;
+    padding:25px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    animation:float 3s ease-in-out infinite;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    animation:fadeUp 1s ease;
+    position:relative;
 }
 
 .photo{
-    width:160px;
-    height:160px;
-    object-fit:cover;
+    width:150px;
+    height:150px;
     border-radius:50%;
-    border:6px solid #ffd6e7;
-    margin-bottom:20px;
+    object-fit:cover;
+    border:6px solid #ffd6ea;
+    margin-bottom:18px;
 }
 
 h1{
-    color:#ff6b9d;
-    margin-bottom:15px;
+    color:#ff6b9f;
+    margin-bottom:10px;
 }
 
-.quote{
+.subtitle{
     color:#666;
-    line-height:1.6;
     margin-bottom:20px;
 }
 
 button{
-    background:#ff8db4;
+    background:#ff8eb6;
     color:white;
     border:none;
-    padding:12px 25px;
+    padding:12px 24px;
     border-radius:30px;
     cursor:pointer;
-    font-size:15px;
+    font-size:16px;
     transition:.3s;
 }
 
 button:hover{
-    background:#ff6b9d;
-    transform:scale(1.05);
+    transform:scale(1.08);
+    background:#ff6f9c;
 }
 
 #message{
     margin-top:20px;
     color:#555;
-    line-height:1.6;
-    font-weight:500;
+    line-height:1.7;
+    animation:fade 1s;
+}
+
+.hearts span{
+    position:absolute;
+    font-size:28px;
+    animation:float 8s linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:8%;
+    animation-delay:0s;
+}
+
+.hearts span:nth-child(2){
+    left:28%;
+    animation-delay:2s;
+}
+
+.hearts span:nth-child(3){
+    left:52%;
+    animation-delay:4s;
+}
+
+.hearts span:nth-child(4){
+    left:72%;
+    animation-delay:1s;
+}
+
+.hearts span:nth-child(5){
+    left:90%;
+    animation-delay:3s;
 }
 
 @keyframes float{
-    0%{
-        transform:translateY(0px);
+    from{
+        top:100%;
+        opacity:0;
     }
-    50%{
-        transform:translateY(-8px);
+    20%{
+        opacity:1;
     }
-    100%{
-        transform:translateY(0px);
+    to{
+        top:-10%;
+        opacity:0;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
     }
 }
